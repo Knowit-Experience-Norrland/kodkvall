@@ -1,16 +1,13 @@
+import React from "react";
+import logo from "./logo.svg";
 import { MediaList } from "./components";
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <img src={logo} className="logo" alt="logo" />
+        <span>Kodkväll med Knowit</span>
       </header>
       <MediaList />
     </div>
