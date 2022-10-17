@@ -17,6 +17,7 @@ export const MediaList: React.FC = () => {
         perPage: 10,
         sort: [MediaSort.PopularityDesc],
         formatIn: [MediaFormat.Movie, MediaFormat.Tv],
+        genres: [],
       },
     }
   );

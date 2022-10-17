@@ -6,7 +6,12 @@ export const GENRES_QUERY = gql`
 `;
 
 export const MEDIA_LIST_QUERY = gql`
-  query MediaList($perPage: Int, $sort: [MediaSort], $formatIn: [MediaFormat]) {
+  query MediaList(
+    $perPage: Int
+    $sort: [MediaSort]
+    $formatIn: [MediaFormat]
+    $genres: [String]
+  ) {
     Page(perPage: $perPage) {
       pageInfo {
         total
@@ -15,7 +20,7 @@ export const MEDIA_LIST_QUERY = gql`
         lastPage
         hasNextPage
       }
-      media(sort: $sort, format_in: $formatIn) {
+      media(sort: $sort, format_in: $formatIn, genre_in: $genres) {
         id
         popularity
         title {
