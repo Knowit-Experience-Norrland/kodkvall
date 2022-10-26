@@ -4,7 +4,7 @@ import logo from "./logo.svg";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App container">
       <header>
         <img src={logo} className="logo" alt="logo" />
         <span>Kodkväll med Knowit</span>
