@@ -5,17 +5,26 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(13, 12, 17);
+  color: white;
+  max-width: 80rem;
+  margin: 0 auto;
 }
 
 header {
   display: flex;
   align-items: center;
   height: 4rem;
-  background-color: #282c34;
   display: flex;
   color: white;
+  justify-content: center;
 
   img {
     width: 58px;
   }
+}
+
+.container{
+  max-width: calc(100% - 4rem);
+  margin: 0 auto;
 }
