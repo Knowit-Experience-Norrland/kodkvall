@@ -1,0 +1,59 @@
+.card__wrapper {
+    height: 480px;
+    width: 230px;
+
+    background-color: rgb(15, 15, 28);
+    border: 1px solid rgba(79, 79, 198, 0.581);
+    border-radius: 1rem;
+
+    .card__img {
+        height: 318px;
+        width: 230px;
+
+        border-radius: 1rem 1rem 0 0;
+    }
+
+    .card__body {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-items: center;
+
+        h3 {
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        .card__title {
+            text-align: center;
+        }
+
+        .card__star-icon {
+            color: rgb(200, 255, 0);
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.card__skeleton {
+    opacity: 0.1;
+
+    background-color: rgb(78, 78, 78);
+    animation: skeleton 3s infinite;
+    animation-timing-function: ease-out;
+
+    @keyframes skeleton {
+        0% {
+            opacity: 0.1;
+        }
+
+        50% {
+            opacity: 0.6;
+        }
+
+        100% {
+            opacity: 0.1;
+        }
+    }
+}

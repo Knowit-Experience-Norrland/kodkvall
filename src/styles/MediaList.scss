@@ -1,0 +1,51 @@
+.medialist__genre-list{    
+    ul{
+        padding: 0;
+        display: flex;
+        flex-direction: row;                
+        overflow-x: scroll;
+        padding-bottom: 0.4rem;        
+
+        &::-webkit-scrollbar {
+            height: 0.3rem;
+            background-color: rgba(0, 0, 0, 0.152);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgb(255, 14, 30);
+            border-radius: 1rem;
+        }
+    }
+    
+    li{
+        list-style: none;
+        margin-right: 1rem;
+
+        button{
+            background-color: rgb(23, 22, 27);
+            height: 3rem;
+            width: 8rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 2rem;
+            color: white;
+            transition: all 0.1s ease-in-out;            
+        }
+
+        .active{
+            background-color: rgb(255, 14, 30);
+        }
+    }
+}
+
+.medialist__list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-gap: 1rem;
+    padding: 0;
+    justify-items: center;
+
+    li{
+        list-style: none;
+    }
+}

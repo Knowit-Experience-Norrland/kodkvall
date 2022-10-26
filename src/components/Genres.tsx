@@ -15,16 +15,12 @@ export const Genres: React.FC<GenresProps> = ({title, selectedGenres, setSelecte
     GENRES_QUERY
   );  
 
-  const SelectGenre = (genre: string) => {
-    if (selectedGenres.includes(genre)) {
-      setSelectedGenres(selectedGenres.filter((g) => g !== genre));
+  const SelectGenre = (clickedGenre: string) => {
+    if (selectedGenres.includes(clickedGenre)) {
+      setSelectedGenres(selectedGenres.filter((g) => g !== clickedGenre));
     } else {
-      setSelectedGenres([...selectedGenres, genre]);
-    }
-  };
-
-  const HighlightGenre = (genre: string) => {
-    return selectedGenres.includes(genre) ? "active" : "";
+      setSelectedGenres([...selectedGenres, clickedGenre]);
+    }    
   };
 
   return (
@@ -32,18 +28,21 @@ export const Genres: React.FC<GenresProps> = ({title, selectedGenres, setSelecte
       <h2>{title}</h2>
       <ul>
         {!loading &&
-          data?.GenreCollection?.map((genre) => (
-            <li key={genre}>
-              <button
-                onClick={() => {
-                  genre && SelectGenre(genre);
-                }}
-                className={`${genre && HighlightGenre(genre)}`}
-              >
-                {genre}
-              </button>
-            </li>
-          ))}
+          data?.GenreCollection?.map(
+            (genre) =>
+              genre && (
+                <li key={genre}>
+                  <button
+                    onClick={() => {
+                      SelectGenre(genre);
+                    }}
+                    className={selectedGenres.includes(genre) ? "active" : ""}
+                  >
+                    {genre}
+                  </button>
+                </li>
+              )
+          )}
       </ul>
     </div>
   );
